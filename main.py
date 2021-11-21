@@ -14,7 +14,7 @@ def get_people():
 					people.append({
 						"Nome": input("Nome: "),
 						"Cognome": input("Cognome: "),
-						"Matricola": input("Matricola: ")
+						"Matricola": i+1
 					})
 				return people
 		except:
@@ -22,10 +22,10 @@ def get_people():
 
 people = get_people()
 
-csv = " Nome, Cognome, Matricola:"
+csv = "Nome,Cognome,Matricola"
 
 for p in people:
-	csv += "\n, {}, {}, {}".format(p["Nome"], p["Cognome"], p["Matricola"])
+	csv += "\n{},{},{}".format(p["Nome"], p["Cognome"], p["Matricola"])
 
 f = open("people.csv", "w")
 f.write(csv)
